@@ -22,6 +22,7 @@ public class TableAdminTest {
     public void beforeTest() throws IOException {
         // 1.	使用HbaseConfiguration.create()创建Hbase配置
         Configuration configuration = HBaseConfiguration.create();
+        configuration.set("hbase.zookeeper.quorum","hadoop102");
         // 2.	使用ConnectionFactory.createConnection()创建Hbase连接
         connection = ConnectionFactory.createConnection(configuration);
         // 3.	要创建表，需要基于Hbase连接获取admin管理对象

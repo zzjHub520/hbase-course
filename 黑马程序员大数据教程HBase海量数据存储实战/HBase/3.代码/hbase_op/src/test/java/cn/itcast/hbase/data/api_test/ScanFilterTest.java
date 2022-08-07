@@ -28,6 +28,7 @@ public class ScanFilterTest {
     public void beforeTest() throws IOException {
         // 1.	使用HbaseConfiguration.create()创建Hbase配置
         Configuration configuration = HBaseConfiguration.create();
+        configuration.set("hbase.zookeeper.quorum","hadoop102");
         // 2.	使用ConnectionFactory.createConnection()创建Hbase连接
         connection = ConnectionFactory.createConnection(configuration);
     }
